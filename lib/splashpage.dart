@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:noviindustechnologies/provider/provider.dart';
+import 'package:noviindustechnologies/provider/services/provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,7 +15,6 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    // call provider after widget build
     Future.microtask(() {
       context.read<SplashProvider>().startSplash(context);
     });

@@ -7,7 +7,6 @@ import 'package:printing/printing.dart';
 Future<void> generatePdf() async {
   final pdf = pw.Document();
 
-  // Load images from assets
   final patientImage = pw.MemoryImage(
     (await rootBundle.load('assets/patiantdetails.png')).buffer.asUint8List(),
   );

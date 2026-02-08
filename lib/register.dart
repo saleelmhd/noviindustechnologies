@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:noviindustechnologies/addtreatementpopup.dart';
+import 'package:noviindustechnologies/pdf.dart';
 import 'package:provider/provider.dart';
-import 'patientlistApi.dart';
+import 'provider/services/patientlistApi.dart';
 
 class PatientRegisterScreen extends StatefulWidget {
   const PatientRegisterScreen({super.key});
@@ -108,16 +109,14 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                       hintText: "Enter your full name",
                       hintStyle: TextStyle(fontSize: 14),
                       filled: true,
-                      fillColor: const Color.fromARGB(
-                          255, 223, 227, 230), 
+                      fillColor: const Color.fromARGB(255, 223, 227, 230),
                       contentPadding: const EdgeInsets.symmetric(
-                        vertical: 12, 
+                        vertical: 12,
                         horizontal: 12,
                       ),
                       border: OutlineInputBorder(
-                        borderRadius:
-                            BorderRadius.circular(8),
-                        borderSide: BorderSide.none, 
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
                       ),
                     ),
                     validator: (v) => v!.isEmpty ? "Enter name" : null,
@@ -142,19 +141,17 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                       hintText: "Enter your whatsapp number",
                       hintStyle: TextStyle(fontSize: 14),
                       filled: true,
-                      fillColor: const Color.fromARGB(
-                          255, 223, 227, 230), 
+                      fillColor: const Color.fromARGB(255, 223, 227, 230),
                       contentPadding: const EdgeInsets.symmetric(
-                        vertical: 12, 
+                        vertical: 12,
                         horizontal: 12,
                       ),
                       border: OutlineInputBorder(
-                        borderRadius:
-                            BorderRadius.circular(8), 
-                        borderSide: BorderSide.none, 
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
                       ),
                     ),
-                    validator: (v) => v!.isEmpty ? "Enter name" : null,
+                    validator: (v) => v!.isEmpty ? "enter number" : null,
                   ),
                   SizedBox(
                     height: 10,
@@ -172,19 +169,17 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                       hintText: "Enter your full address",
                       hintStyle: TextStyle(fontSize: 14),
                       filled: true,
-                      fillColor: const Color.fromARGB(
-                          255, 223, 227, 230), 
+                      fillColor: const Color.fromARGB(255, 223, 227, 230),
                       contentPadding: const EdgeInsets.symmetric(
-                        vertical: 12, 
+                        vertical: 12,
                         horizontal: 12,
                       ),
                       border: OutlineInputBorder(
-                        borderRadius:
-                            BorderRadius.circular(8), 
-                        borderSide: BorderSide.none, 
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
                       ),
                     ),
-                    validator: (v) => v!.isEmpty ? "Enter name" : null,
+                    validator: (v) => v!.isEmpty ? "enter address" : null,
                   ),
                   SizedBox(
                     height: 10,
@@ -202,19 +197,17 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                       hintText: "Choose your location",
                       hintStyle: TextStyle(fontSize: 14),
                       filled: true,
-                      fillColor: const Color.fromARGB(
-                          255, 223, 227, 230), 
+                      fillColor: const Color.fromARGB(255, 223, 227, 230),
                       contentPadding: const EdgeInsets.symmetric(
-                        vertical: 12, 
+                        vertical: 12,
                         horizontal: 12,
                       ),
                       border: OutlineInputBorder(
-                        borderRadius:
-                            BorderRadius.circular(8), 
-                        borderSide: BorderSide.none, 
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
                       ),
                     ),
-                    validator: (v) => v!.isEmpty ? "Enter name" : null,
+                    validator: (v) => v!.isEmpty ? "enter location" : null,
                   ),
                   SizedBox(
                     height: 10,
@@ -232,19 +225,17 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                       hintText: "Select the branch",
                       hintStyle: TextStyle(fontSize: 14),
                       filled: true,
-                      fillColor: const Color.fromARGB(
-                          255, 223, 227, 230), 
+                      fillColor: const Color.fromARGB(255, 223, 227, 230),
                       contentPadding: const EdgeInsets.symmetric(
-                        vertical: 12, 
+                        vertical: 12,
                         horizontal: 12,
                       ),
                       border: OutlineInputBorder(
-                        borderRadius:
-                            BorderRadius.circular(8), 
-                        borderSide: BorderSide.none, 
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
                       ),
                     ),
-                    validator: (v) => v!.isEmpty ? "Enter name" : null,
+                    validator: (v) => v!.isEmpty ? "enter branch" : null,
                   ),
                   SizedBox(
                     height: 10,
@@ -266,7 +257,6 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                     
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -287,7 +277,6 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                           ],
                         ),
                         SizedBox(height: 12),
-
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -329,7 +318,7 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                                   child: Row(
                                     children: [
                                       Text(
-                                        '2', 
+                                        '2',
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                       ),
@@ -355,7 +344,6 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                           borderRadius: BorderRadius.circular(10)),
                       minimumSize: Size(MediaQuery.of(context).size.width, 40),
                       backgroundColor: Colors.green,
-                     
                     ),
                     onPressed: () async {
                       showDialog(
@@ -382,29 +370,25 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                     height: 10,
                   ),
                   TextFormField(
-                    keyboardType:
-                        TextInputType.number, 
+                    keyboardType: TextInputType.number,
                     inputFormatters: [
-                      FilteringTextInputFormatter
-                          .digitsOnly, 
+                      FilteringTextInputFormatter.digitsOnly,
                     ],
                     controller: totalController,
                     decoration: InputDecoration(
                       hintStyle: TextStyle(fontSize: 14),
                       filled: true,
-                      fillColor: const Color.fromARGB(
-                          255, 223, 227, 230), 
+                      fillColor: const Color.fromARGB(255, 223, 227, 230),
                       contentPadding: const EdgeInsets.symmetric(
-                        vertical: 12, 
+                        vertical: 12,
                         horizontal: 12,
                       ),
                       border: OutlineInputBorder(
-                        borderRadius:
-                            BorderRadius.circular(8), 
-                        borderSide: BorderSide.none, 
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
                       ),
                     ),
-                    validator: (v) => v!.isEmpty ? "Enter name" : null,
+                    validator: (v) => v!.isEmpty ? "enter total amount " : null,
                   ),
                   SizedBox(
                     height: 10,
@@ -416,31 +400,26 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                   SizedBox(
                     height: 10,
                   ),
-
                   TextFormField(
-                    keyboardType:
-                        TextInputType.number, 
+                    keyboardType: TextInputType.number,
                     inputFormatters: [
-                      FilteringTextInputFormatter
-                          .digitsOnly, 
+                      FilteringTextInputFormatter.digitsOnly,
                     ],
                     controller: discountController,
                     decoration: InputDecoration(
                       hintStyle: TextStyle(fontSize: 14),
                       filled: true,
-                      fillColor: const Color.fromARGB(
-                          255, 223, 227, 230), 
+                      fillColor: const Color.fromARGB(255, 223, 227, 230),
                       contentPadding: const EdgeInsets.symmetric(
-                        vertical: 12, 
+                        vertical: 12,
                         horizontal: 12,
                       ),
                       border: OutlineInputBorder(
-                        borderRadius:
-                            BorderRadius.circular(8), 
-                        borderSide: BorderSide.none, 
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
                       ),
                     ),
-                    validator: (v) => v!.isEmpty ? "Enter name" : null,
+                    validator: (v) => v!.isEmpty ? "enter discount amount" : null,
                   ),
                   SizedBox(
                     height: 10,
@@ -455,31 +434,26 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                   SizedBox(
                     height: 10,
                   ),
-
                   TextFormField(
-                    keyboardType:
-                        TextInputType.number, 
+                    keyboardType: TextInputType.number,
                     inputFormatters: [
-                      FilteringTextInputFormatter
-                          .digitsOnly, 
+                      FilteringTextInputFormatter.digitsOnly,
                     ],
                     controller: advanceController,
                     decoration: InputDecoration(
                       hintStyle: TextStyle(fontSize: 14),
                       filled: true,
-                      fillColor: const Color.fromARGB(
-                          255, 223, 227, 230), 
+                      fillColor: const Color.fromARGB(255, 223, 227, 230),
                       contentPadding: const EdgeInsets.symmetric(
-                        vertical: 12, 
+                        vertical: 12,
                         horizontal: 12,
                       ),
                       border: OutlineInputBorder(
-                        borderRadius:
-                            BorderRadius.circular(8), 
-                        borderSide: BorderSide.none, 
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
                       ),
                     ),
-                    validator: (v) => v!.isEmpty ? "Enter name" : null,
+                    validator: (v) => v!.isEmpty ? "enter advance amount" : null,
                   ),
                   SizedBox(
                     height: 10,
@@ -491,31 +465,26 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                   SizedBox(
                     height: 10,
                   ),
-
                   TextFormField(
-                    keyboardType:
-                        TextInputType.number, 
+                    keyboardType: TextInputType.number,
                     inputFormatters: [
-                      FilteringTextInputFormatter
-                          .digitsOnly, 
+                      FilteringTextInputFormatter.digitsOnly,
                     ],
                     controller: balanceController,
                     decoration: InputDecoration(
                       hintStyle: TextStyle(fontSize: 14),
                       filled: true,
-                      fillColor: const Color.fromARGB(
-                          255, 223, 227, 230), 
+                      fillColor: const Color.fromARGB(255, 223, 227, 230),
                       contentPadding: const EdgeInsets.symmetric(
-                        vertical: 12, 
+                        vertical: 12,
                         horizontal: 12,
                       ),
                       border: OutlineInputBorder(
-                        borderRadius:
-                            BorderRadius.circular(8), 
-                        borderSide: BorderSide.none, 
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
                       ),
                     ),
-                    validator: (v) => v!.isEmpty ? "Enter name" : null,
+                    validator: (v) => v!.isEmpty ? "enter balance amount" : null,
                   ),
                   SizedBox(
                     height: 10,
@@ -527,11 +496,9 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                   SizedBox(
                     height: 10,
                   ),
-
                   TextFormField(
-                    controller:
-                        dateController,
-                    readOnly: true, 
+                    controller: dateController,
+                    readOnly: true,
                     decoration: InputDecoration(
                       hintText: "Select treatment date",
                       hintStyle: const TextStyle(fontSize: 14),
@@ -566,8 +533,6 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                     },
                     validator: (v) => v!.isEmpty ? "Select date" : null,
                   ),
-                 
-
                   SizedBox(
                     height: 10,
                   ),
@@ -578,10 +543,8 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                   SizedBox(
                     height: 10,
                   ),
-
                   Row(
                     children: [
-                    
                       Expanded(
                         child: DropdownButtonFormField<String>(
                           value: hourController.text.isEmpty
@@ -649,11 +612,11 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                         backgroundColor: Colors.green,
                         foregroundColor: Colors.white),
                     onPressed: () async {
+                     
                       if (!_formKey.currentState!.validate()) return;
 
                       Map<String, dynamic> data = {
                         "name": nameController.text,
-
                         "phone": whatsappnumberclr.text,
                         "address": addressclr.text,
                         "total_amount": totalController.text,
@@ -661,13 +624,13 @@ class _PatientRegisterScreenState extends State<PatientRegisterScreen> {
                         "advance_amount": advanceController.text,
                         "balance_amount": balanceController.text,
                         "date_nd_time": dateController.text,
-                        "id": 0, 
+                        "id": 0,
                         "male": maleTreatments,
                         "female": femaleTreatments,
                         "branch": selectedBranchId,
                         "treatments": treatments,
                       };
-
+ generatePdf();
                       bool success = await provider.registerPatient(data);
                       if (success) {
                         ScaffoldMessenger.of(context).showSnackBar(

@@ -24,7 +24,6 @@ class TreatmentTablePdf {
       'female': 0,
       'total': 1000,
     },
-    // Add more rows as needed
   ];
 
   pw.Widget build() {
@@ -44,7 +43,6 @@ class TreatmentTablePdf {
         4: pw.FlexColumnWidth(2),
       },
       children: [
-        // Table Header
         pw.TableRow(
           decoration: pw.BoxDecoration(color: PdfColors.grey200),
           children: [
@@ -101,7 +99,6 @@ class TreatmentTablePdf {
           ],
         ),
 
-        // Table Rows
         ...data.map((row) {
           return pw.TableRow(
             children: [

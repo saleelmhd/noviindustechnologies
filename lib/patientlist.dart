@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:noviindustechnologies/patientlistApi.dart';
-import 'package:noviindustechnologies/pdf.dart';
+import 'package:noviindustechnologies/provider/services/patientlistApi.dart';
 import 'package:noviindustechnologies/register.dart';
 import 'package:provider/provider.dart';
 
@@ -90,13 +89,12 @@ class _PatientlistState extends State<Patientlist> {
                   onPressed: () async {
                     final query = _searchController.text.trim();
 
-                    // Set search query in provider
+                    
                     final provider =
                         Provider.of<PatientProvider>(context, listen: false);
                     provider.setSearchQuery(query);
 
-                    // Optional: if you want to refetch from API
-                    // await provider.fetchPatients();
+                    
                   },
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.zero,
@@ -113,7 +111,6 @@ class _PatientlistState extends State<Patientlist> {
             ),
           ),
 
-          // Dropdown for sorting
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Row(
@@ -160,7 +157,6 @@ class _PatientlistState extends State<Patientlist> {
             ),
           ),
 
-          // Patient List
           Expanded(
             child: Consumer<PatientProvider>(
               builder: (context, patientProvider, _) {
@@ -306,9 +302,8 @@ class _PatientlistState extends State<Patientlist> {
                     ),
                   );
              
-                  // Handle registration action
+                  
                   print("Register button pressed");
-                  // Navigator.push(...) if you want to go to a new page
                 },
                 child: const Text(
                   "Register Now",

@@ -75,7 +75,10 @@ class _AddTreatmentDialogState extends State<AddTreatmentDialog> {
                 Row(
                   children: [
                     IconButton(
-                      icon: Icon(Icons.remove_circle_outline,color: Colors.green,),
+                      icon: Icon(
+                        Icons.remove_circle_outline,
+                        color: Colors.green,
+                      ),
                       onPressed: () {
                         setState(() {
                           if (maleCount > 0) maleCount--;
@@ -83,24 +86,28 @@ class _AddTreatmentDialogState extends State<AddTreatmentDialog> {
                       },
                     ),
                     Container(
-  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-  decoration: BoxDecoration(
-    color: Colors.white.withOpacity(0.8), // light white background
-    borderRadius: BorderRadius.circular(8),
-    border: Border.all(color: Colors.grey),
-  ),
-  child: Text(
-    "$maleCount",
-    style: TextStyle(
-      fontSize: 16,
-      fontWeight: FontWeight.bold,
-      color: Colors.black87,
-    ),
-  ),
-)
-,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: Colors.white
+                            .withOpacity(0.8), // light white background
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(color: Colors.grey),
+                      ),
+                      child: Text(
+                        "$maleCount",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                        ),
+                      ),
+                    ),
                     IconButton(
-                      icon: Icon(Icons.add_circle_outline,color: Colors.green,),
+                      icon: Icon(
+                        Icons.add_circle_outline,
+                        color: Colors.green,
+                      ),
                       onPressed: () {
                         setState(() {
                           maleCount++;
@@ -137,7 +144,10 @@ class _AddTreatmentDialogState extends State<AddTreatmentDialog> {
                   children: [
                     Container(
                       child: IconButton(
-                        icon: Icon(Icons.remove_circle_outline,color: Colors.green,),
+                        icon: Icon(
+                          Icons.remove_circle_outline,
+                          color: Colors.green,
+                        ),
                         onPressed: () {
                           setState(() {
                             if (femaleCount > 0) femaleCount--;
@@ -145,24 +155,29 @@ class _AddTreatmentDialogState extends State<AddTreatmentDialog> {
                         },
                       ),
                     ),
- Container(
-  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-  decoration: BoxDecoration(
-    color: Colors.white.withOpacity(0.8), // light white background
-    borderRadius: BorderRadius.circular(8),
-    border: Border.all(color: Colors.grey),
-  ),
-  child: Text(
-    "$femaleCount",
-    style: TextStyle(
-      fontSize: 16,
-      fontWeight: FontWeight.bold,
-      color: Colors.black87,
-    ),
-  ),
-)
-,                    IconButton(
-                      icon: Icon(Icons.add_circle_outline,color: Colors.green,),
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: Colors.white
+                            .withOpacity(0.8), // light white background
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(color: Colors.grey),
+                      ),
+                      child: Text(
+                        "$femaleCount",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                        ),
+                      ),
+                    ),
+                    IconButton(
+                      icon: Icon(
+                        Icons.add_circle_outline,
+                        color: Colors.green,
+                      ),
                       onPressed: () {
                         setState(() {
                           femaleCount++;
