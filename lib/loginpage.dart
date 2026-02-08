@@ -17,7 +17,6 @@ class LoginPage extends StatelessWidget {
     final authProvider = Provider.of<AuthProvider>(context);
     return Scaffold(
       body: Column(children: [
-        // 🔹 Top container with blurred background image
         Expanded(
           flex: 3,
           child: Container(
@@ -49,7 +48,6 @@ class LoginPage extends StatelessWidget {
           ),
         ),
 
-        // 🔹 Bottom white container with login form
         Expanded(
           flex: 6,
           child: Container(

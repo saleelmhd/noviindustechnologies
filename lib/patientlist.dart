@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:noviindustechnologies/patientlistApi.dart';
+import 'package:noviindustechnologies/pdf.dart';
 import 'package:noviindustechnologies/register.dart';
 import 'package:provider/provider.dart';
 
@@ -304,6 +305,7 @@ class _PatientlistState extends State<Patientlist> {
                       builder: (context) => const PatientRegisterScreen(),
                     ),
                   );
+             
                   // Handle registration action
                   print("Register button pressed");
                   // Navigator.push(...) if you want to go to a new page

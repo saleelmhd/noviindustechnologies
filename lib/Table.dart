@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:pdf/widgets.dart' as pw;
+import 'package:pdf/pdf.dart';
 
-class TreatmentTable extends StatelessWidget {
+class TreatmentTablePdf {
   final List<Map<String, dynamic>> data = [
     {
       'treatment': 'Couple Combo',
@@ -26,66 +27,75 @@ class TreatmentTable extends StatelessWidget {
     // Add more rows as needed
   ];
 
-  @override
-  Widget build(BuildContext context) {
-    return Table(
-      columnWidths: const {
-        0: FlexColumnWidth(3),
-        1: FlexColumnWidth(2),
-        2: FlexColumnWidth(2),
-        3: FlexColumnWidth(2),
-        4: FlexColumnWidth(2),
-      },
-      border: TableBorder(
-        horizontalInside: BorderSide(
-          color: Colors.grey.shade300, // optional light line between rows
+  pw.Widget build() {
+    return 
+    pw.Table(
+      border: pw.TableBorder(
+        horizontalInside: pw.BorderSide(
+          color: PdfColors.grey300,
           width: 0.5,
         ),
-        // No vertical borders
       ),
+      columnWidths: const {
+        0: pw.FlexColumnWidth(3),
+        1: pw.FlexColumnWidth(2),
+        2: pw.FlexColumnWidth(2),
+        3: pw.FlexColumnWidth(2),
+        4: pw.FlexColumnWidth(2),
+      },
       children: [
         // Table Header
-        TableRow(
-         
-          children: const [
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+        pw.TableRow(
+          decoration: pw.BoxDecoration(color: PdfColors.grey200),
+          children: [
+            pw.Padding(
+              padding: const pw.EdgeInsets.all(4),
+              child: pw.Text(
                 'Treatment',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: Colors.green,fontSize: 10),
+                style: pw.TextStyle(
+                    fontWeight: pw.FontWeight.bold,
+                    color: PdfColors.green,
+                    fontSize: 10),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            pw.Padding(
+              padding: const pw.EdgeInsets.all(4),
+              child: pw.Text(
                 'Price',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: Colors.green,fontSize: 10),
+                style: pw.TextStyle(
+                    fontWeight: pw.FontWeight.bold,
+                    color: PdfColors.green,
+                    fontSize: 10),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            pw.Padding(
+              padding: const pw.EdgeInsets.all(4),
+              child: pw.Text(
                 'Male',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: Colors.green,fontSize: 10),
+                style: pw.TextStyle(
+                    fontWeight: pw.FontWeight.bold,
+                    color: PdfColors.green,
+                    fontSize: 10),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            pw.Padding(
+              padding: const pw.EdgeInsets.all(4),
+              child: pw.Text(
                 'Female',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: Colors.green,fontSize: 10),
+                style: pw.TextStyle(
+                    fontWeight: pw.FontWeight.bold,
+                    color: PdfColors.green,
+                    fontSize: 10),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            pw.Padding(
+              padding: const pw.EdgeInsets.all(4),
+              child: pw.Text(
                 'Total',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: Colors.green,fontSize: 10),
+                style: pw.TextStyle(
+                    fontWeight: pw.FontWeight.bold,
+                    color: PdfColors.green,
+                    fontSize: 10),
               ),
             ),
           ],
@@ -93,31 +103,37 @@ class TreatmentTable extends StatelessWidget {
 
         // Table Rows
         ...data.map((row) {
-          return TableRow(
+          return pw.TableRow(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(row['treatment'].toString(),style: TextStyle(fontSize:  9),),
+              pw.Padding(
+                padding: const pw.EdgeInsets.all(4),
+                child: pw.Text(row['treatment'].toString(),
+                    style: const pw.TextStyle(fontSize: 9)),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [Text("₹ ",style: TextStyle(fontSize:  9),),
-                    Text(row['price'].toString(),style: TextStyle(fontSize:  9),),
+              pw.Padding(
+                padding: const pw.EdgeInsets.all(4),
+                child: pw.Row(
+                  children: [
+                    pw.Text("₹ ", style: const pw.TextStyle(fontSize: 9)),
+                    pw.Text(row['price'].toString(),
+                        style: const pw.TextStyle(fontSize: 9)),
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(row['male'].toString(),style: TextStyle(fontSize:  9),),
+              pw.Padding(
+                padding: const pw.EdgeInsets.all(4),
+                child: pw.Text(row['male'].toString(),
+                    style: const pw.TextStyle(fontSize: 9)),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(row['female'].toString(),style: TextStyle(fontSize:  9),),
+              pw.Padding(
+                padding: const pw.EdgeInsets.all(4),
+                child: pw.Text(row['female'].toString(),
+                    style: const pw.TextStyle(fontSize: 9)),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(row['total'].toString(),style: TextStyle(fontSize:  9),),
+              pw.Padding(
+                padding: const pw.EdgeInsets.all(4),
+                child: pw.Text(row['total'].toString(),
+                    style: const pw.TextStyle(fontSize: 9)),
               ),
             ],
           );
