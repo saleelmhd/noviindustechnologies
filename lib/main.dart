@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:noviindustechnologies/loginpage.dart';
+import 'package:noviindustechnologies/patientdetails.dart';
+import 'package:noviindustechnologies/patientlistApi.dart';
 import 'package:noviindustechnologies/provider/provider.dart';
 import 'package:noviindustechnologies/provider/services/loginApi.dart';
-import 'package:noviindustechnologies/provider/services/patientlistApi.dart';
-import 'package:noviindustechnologies/register.dart';
 
 import 'package:provider/provider.dart';
 
@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => SplashProvider()),
         ChangeNotifierProvider(create: (_) => AuthProvider()),
         ChangeNotifierProvider(create: (_) => PatientProvider()),
+        
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: LoginPage(),
+        home: Patientdetails(),
       ),
     );
   }
